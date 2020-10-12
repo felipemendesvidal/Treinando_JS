@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com funções, objetos e arrays</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<!-- ao carregar chama a função listar -->
+<body onload="listar(),listar_contato()">
+    <!-- menu -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light shadow-expand">
+        <a class="navbar-brand" href="#">Atividades atrasadas </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#exercicio1">Exercicio 1</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#execicio2">Exercicio 2</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#exercicio3">Exercico 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- menu end -->
+    <!-- content bg -->
+    <div class="background">
+
+    </div>
+    <!-- end content bg -->
+    <section class="container m-auto">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="my-5">Atividades para entregar</h2>
+            </div>
+            <!-- atividade 1 -->
+            <div class="col-md-12" id="exercicio1">
+                <h4>Exercicio 1</h4>
+                <p>Com o html(calcular_temperatura.html) fornecido informe uma temperatura e a partir da escolha do
+                    usuário informe o mesmo em Celcius ou Fahrenheit <a
+                        href="https://michaelis.uol.com.br/moderno-ingles/tabela-de-conversao-de-temperaturas-em-graus-celsius-e-fahrenheit/">Clique
+                        aqui para saber mais</a></p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form id="formtemperatura">
+                            <input type="text" required name="temperatura" id="temperatura">
+
+                            <input type="checkbox" id="celcius" name="temperatura">Celcius</checkbox>
+
+                            <input type="checkbox" id="fahrenheit" name="temperatura">Fahrenheit</checkbox>
+
+                            <button type="submit" id="btnConverter">Converter</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end col -->
+            <!-- atividade 2 -->
+            <div class="col-md-12 my-5" id="execicio2">
+                <h4>Exercicio 2</h4>
+                <p>Com o html(newsletter.html) fornecido ao clicar no botão Enviar, pegue o valor do email e verifique
+                    se o e-mail possui @, caso possua mostre um alerta de e-mail cadastrado, caso não contenha mostre um
+                    alerta de e-mail inválido</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="news__title" id="formTitle">Se inscreva para receber mais informações</h5>
+                        <p></p>
+
+                        <form action="" class="news__form">
+
+                            <label for="newsInputEmail" class="news__label">E-mail:</label>
+
+                            <input type="email" class="news__input" id="newsInputEmail"
+                                placeholder="email@exemplo.com.br">
+                            <!-- botão só habilita quando digitar com @ -->
+                            <button class="button news__button" id="btn_enviar">Enviar</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+            <!-- atividade 3 -->
+            <div class="col-md-12 my-5" id="exercicio3">
+                <h4>Exercicio da aula "Trabalhando com funções, objetos e arrays"</h4>
+                <p>Cadastre os nomes em um objeto e mostre o objeto no console </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="" id="formulario">
+                            <input type="text" id="nome2" placeholder="Nome: joão" required>
+
+                            <input type="text" id="email2" placeholder="E-mail:e-mail@e-mail.com.br" required>
+
+                            <input type="text" id="telefone2" placeholder="telefone: 12 3456-7891" required>
+
+                            <button type="submit" id="cadastrar">Cadstrar</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- evento js chamando a função listar -->
+                <div class="row my-3" onload="listar_contato()">
+                    <div class="col-md-12" >
+                        <h4>Parte dois da aula</h4>
+                        <p>mostrando os dados cadastrados</p>
+
+
+                        <input type="text" id="fruta" placeholder="digite uma fruta" required>
+
+                        <button type="submit" id="btnCadastrar">Cadastrar</button>
+                        <button type="submit" id="btnRemover">Remover</button>
+                        <table class="my-3">
+                            <thead>
+                                <th>Nome da fruta</th>
+                            </thead>
+                            <tbody id="tabelacorpo">
+                               
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-md-12">
+                        <h4>Exercicio 3</h4>
+                        <p>  Ao clicar no botão cadastrar salve o objeto no array e informe uma mensagem de contato salvo, e liste na tabela</p>
+                        <p> Para remover um contato informe o e-mail do contato que deseja remover e clique no botão remover, caso não encontre o e-mail mostre um alert('Contato não   encontrado'), caso removido informa Contato Removido e remova do array.</p>
+
+                        <input type="text" id="nome_contato" placeholder="Nome" required/>
+                        <input type="text" id="email_contato" placeholder="e-mail" required/>
+                        <input type="text" id="telefone_contato" placeholder="Telefone" required/>
+
+                        <button type="button" id='btnCadastrar2'>Cadastrar</button>
+                        <button type="button" id='btnRemover2'>Remover</button>
+
+                        <table class="my-3">
+                            <thead>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Senha</th>
+                            </thead>
+                            <tbody id="tabelaCorpo2"></tbody>
+                        </table>   
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end col -->
+
+
+        </div>
+        <!-- end reow -->
+    </section>
+    <!-- end conteudo -->
+
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!-- aulas -->
+    <script src="js/exercicio1.js"></script>
+    <script src="js/exercicio2.js"></script>
+    <script src="js/exercicio3_aula.js"></script>
+    <script src="js/exercicio3_aulap2- Copia.js"></script>
+    <script src="js/exercicio3.js"></script>
+
+
+
+</body>
+
+</html>
