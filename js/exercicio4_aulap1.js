@@ -2,7 +2,7 @@
 // 2. Traga somente os nomes dos times;
 // 3. Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36;
 // 4. Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time
-// 5. Informe a quantidade de jogos do campeonato;
+// 5. Informe a quantidade de jogos do campeonato; x
 
 
 //declarações e array
@@ -62,3 +62,6 @@ let times = [
     console.log(quantidade_de_jogos_do_campeonato)
 //rduce end
 
+// adicionando
+let novoTime = {nome : 'Wolves',vitorias : 12,empates:8,derrotas : 10,golsproprio : 38,golscontra : 36}
+times.push(novoTime);
