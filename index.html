@@ -11,7 +11,7 @@
 
 </head>
 <!-- ao carregar chama a função listar -->
-<body onload="listar(),listar_contato()">
+<body onload="listar(),listar_contato(),listar_filmes()">
     <!-- menu -->
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light shadow-expand">
         <a class="navbar-brand" href="#">Atividades atrasadas </a>
@@ -41,7 +41,7 @@
     <!-- menu end -->
     <!-- content bg -->
     <div class="background">
-
+        <h4>Programar é como ter asas, posso ir onde minha imaginação me guiar!</h4>
     </div>
     <!-- end content bg -->
     <section class="container m-auto">
@@ -163,25 +163,42 @@
                 <!-- end row -->
             </div>
             <!-- end col -->
-
+            <div class="col-md-12">
+                <h3>Desenvolvido em aula: map, filter e reduce</h3>
+                <p>Olha console...</p>
+            </div>
 
         </div>
         <!-- end reow -->
-
-        
     </section>
     <!-- end conteudo -->
+   
     <!-- quebra -->
     <div class="quebra">
+        <h4>"Não adianta enganar o professor, uma hora tudo que você terá é um computador e suas habilidades desenvolvidas ou não..." - <strong>Prof. Fernando</strong></h4>
 
     </div>
     <!-- fim quebra -->
     <section class="container">
         <div class="col-md-12">
-            <h3>Desenvolvido em aula: map, filter e reduce</h3>
+            <h4 class="mt-5">Exemplo feito em aula, Trabalhando com requisições na Api - XmlHttpRequest</h4>
+            <p>consulte o console</p>
+            <form id="form">
+                
 
+                <input type="text" id="categoria_filme" placeholder="Categoria" required>
+
+                
+        
+                <button type="button"  id="btnCadastrarFilmes">Cadastrar</button>
+                
+                <button type="button" onclick="remover_filme()" id="btnRemover">Remover</button>
+    
+                    
+                </table>
+            </form>
         </div>
-
+        
     </section>
 
 
@@ -202,7 +219,9 @@
     <script src="js/exercicio3_aula.js"></script>
     <script src="js/exercicio3_aulap2- Copia.js"></script>
     <script src="js/exercicio3.js"></script>
-    <script src="js/exercicio4_aulap1.js"></script>
+    <script src="js/exercicio4_aulap1 - Copia.js"></script>
+    <script src="js/exercicio5_aulap1.js"></script>
+
 
 
 
