@@ -11,7 +11,7 @@
 
 </head>
 <!-- ao carregar chama a função listar -->
-<body onload="listar(),listar_contato(),listar_filmes()">
+<body onload="listar(),listar_contato(),listar_filmes(),listar_filmes2()" class="bg-light">
     <!-- menu -->
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light shadow-expand">
         <a class="navbar-brand" href="#">Atividades atrasadas </a>
@@ -180,25 +180,88 @@
     </div>
     <!-- fim quebra -->
     <section class="container">
-        <div class="col-md-12">
-            <h4 class="mt-5">Exemplo feito em aula, Trabalhando com requisições na Api - XmlHttpRequest</h4>
-            <p>consulte o console</p>
-            <form id="form">
-                
-
-                <input type="text" id="categoria_filme" placeholder="Categoria" required>
-
-                
-        
-                <button type="button"  id="btnCadastrarFilmes">Cadastrar</button>
-                
-                <button type="button" onclick="remover_filme()" id="btnRemover">Remover</button>
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <h4 class="mt-5">Exemplo feito em aula, Trabalhando com requisições na Api - XmlHttpRequest</h4>
+                <p>consulte o console</p>
+                <form id="form">
+                    
+    
+                    <input type="text" id="categoria_filme" placeholder="Categoria" required>
     
                     
-                </table>
-            </form>
+            
+                    <button type="button"  id="btnCadastrarFilmes">Cadastrar</button>
+                    
+                    <button type="button" onclick="remover_filme()" id="btnRemover">Remover</button>
+        
+                        
+                    </table>
+                </form>
+            </div>
+
         </div>
         
+    </section>
+    <div class="container-fluid bg-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 py-4 text-light">
+                    <h2 >Cadastre seu filme preferido</h2>
+                    <p>A aula mais aguardada, cadastre seu filme e veja essa belezinha de interface funcionando sem dar erros.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="container-fluid bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 py-4">   
+                    <form id="form" class="">
+                        <input type="hidden" id="filmeId" />
+                        <div class="form-group">
+                            <label for="nome_do_filme"> Nome do filme</label>
+                            <input type="text" id="nome_filme2" placeholder="Mad-Max" class="form-control mb-3" required>
+
+                            <label for="categoria_do_filme">Categoria</label>
+                            <input type="text" id="categoria_filme2" placeholder="Ação / ficção" class="form-control mb-3" required>
+
+                            <label for="ano_do_filme">Ano de Lançamento</label>
+                            <input type="text" id="ano_filme2" placeholder="1980" class="form-control mb-3" required>
+                            <small id="ajudaAnoFilme" class="form-text text-muted">Não se preoculpe com o ano, iremos atalizar conforme for baixado no final</small>
+                        </div>
+                
+                        <button type="button" onclick="cadastrar_filme2()" id="btnCadastrar_filme2" class="btn btn-outline-success">Cadastrar</button>
+                        <button type="button" onclick="remover_filme2()" id="btnRemover_filme2" class="btn btn-outline-danger">Remover</button>
+                
+                        <table class="table mt-4">
+                            <caption>Filmes</caption>
+                            <thead class="text-light">
+                                <th scope="col">
+                                    Id
+                                </th>
+                                <th scope="col">
+                                    Nome
+                                </th>
+                                <th scope="col">
+                                    Categoria
+                                </th>
+                                <th scope="col">
+                                    Ano Lançamento
+                                </th>
+                            </thead>
+                            <tbody id="tabela-filmes-corpo"></tbody>
+                        </table>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
     </section>
 
 
@@ -221,6 +284,8 @@
     <script src="js/exercicio3.js"></script>
     <script src="js/exercicio4_aulap1 - Copia.js"></script>
     <script src="js/exercicio5_aulap1.js"></script>
+    <script src="js/exercicio6_aulap1.js"></script>
+
 
 
 
