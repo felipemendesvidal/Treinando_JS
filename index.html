@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br"> 
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 
 </head>
 <!-- ao carregar chama a função listar -->
-<body onload="listar(),listar_contato(),listar_filmes(),listar_filmes2()" class="bg-light">
+<body onload="listar(),listar_contato(),listar_filmes(), listar_filmes2 ()" class="bg-light">
     <!-- menu -->
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light shadow-expand">
         <a class="navbar-brand" href="#">Atividades atrasadas </a>
@@ -220,7 +220,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 py-4">   
-                    <form id="form" class="">
+                    <form id="formFilme" class="">
                         <input type="hidden" id="filmeId" />
                         <div class="form-group">
                             <label for="nome_do_filme"> Nome do filme</label>
@@ -234,7 +234,7 @@
                             <small id="ajudaAnoFilme" class="form-text text-muted">Não se preoculpe com o ano, iremos atalizar conforme for baixado no final</small>
                         </div>
                 
-                        <button type="button" onclick="cadastrar_filme2()" id="btnCadastrar_filme2" class="btn btn-outline-success">Cadastrar</button>
+                        <button type="button" onclick="salvar()" id="btnCadastrar_filme2" class="btn btn-outline-success">Cadastrar</button>
                         <button type="button" onclick="remover_filme2()" id="btnRemover_filme2" class="btn btn-outline-danger">Remover</button>
                 
                         <table class="table mt-4">
@@ -251,6 +251,9 @@
                                 </th>
                                 <th scope="col">
                                     Ano Lançamento
+                                </th>
+                                <th scope="col">
+                                    <button type="reset" class="btn btn-primary" onclick="novoFilme()">Novo Filme</button>
                                 </th>
                             </thead>
                             <tbody id="tabela-filmes-corpo"></tbody>

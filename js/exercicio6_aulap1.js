@@ -9,23 +9,27 @@ let link_api_filmes= 'https://5f8c9f01c7aadb001605e4d7.mockapi.io/api/filmes';
         //fetch serve para a mesma coisa que o xmlhttprequest, usado para comunicação http com o servidor, porem funciona de formas diferentes
         //fez a chamada para api e retona uma promessa caso sejá feito a comunicação com sucesso
         fetch(link_api_filmes, { method: 'GET'})
-        //onload
-        .then(response => response.json()) // se ocorrer ele pegará o response convertido em json
-        .then(dados => {
-            PreencherTabelaFilmes(dados);
+            //onload
+            .then(response => response.json()) // se ocorrer ele pegará o response convertido em json
+            .then(dados => {
+                PreencherTabelaFilmes(dados);
         })//pega as informaçãoes do retorno
         .catch(err => console.error(err));
         // 54:29 
 
     }//fim da pure function
 
-    const filmes = {
-        nomeFilme : document.querySelector('#nome_filme2').value,
-        categoriaFilme : document.querySelector('#categoria_filme2').value,
-        anoLancamento : document.querySelector('#ano_filme2').value
-    }
+    // const filmes = {
+    //     nomeFilme : document.querySelector('#nome_filme2').value,
+    //     categoriaFilme : document.querySelector('#categoria_filme2').value,
+    //     anoLancamento : document.querySelector('#ano_filme2').value
+    // }
+    //evento
+    
+
 
     const PreencherTabelaFilmes = (dados) => {
+        
     let tabelafilmescorpo = document.querySelector('#tabela-filmes-corpo');
     //criando dinamicamente, apagando conteudo
     tabelafilmescorpo.innerHTML = "";
@@ -34,18 +38,19 @@ let link_api_filmes= 'https://5f8c9f01c7aadb001605e4d7.mockapi.io/api/filmes';
     let linha_filme, colunaId_filme, colunaNome_filme, colunaCategoria_filme, colunaAnoLancamento_filme, colunaAcao_filme;
 
     dados.forEach(item_lambida =>{
-        linha_filme = document.querySelector('tr');
-        colunaId_filme = document.querySelector('td');
+        linha_filme = document.createElement('tr');
+
+        colunaId_filme = document.createElement('td');
         colunaId_filme.innerText = item_lambida.id;
 
         colunaNome_filme = document.createElement("td");
-        colunaNome_filme.innerText = item_lambida.nomeFilme;
+        colunaNome_filme.innerText = item_lambida.nome;
 
         colunaCategoria_filme = document.createElement("td");
-        colunaCategoria_filme.innerText = item_lambida.categoriaFilme;
+        colunaCategoria_filme.innerText = item_lambida.categoria;
 
         colunaAnoLancamento_filme = document.createElement("td");
-        colunaAnoLancamento_filme.innerText = item_lambida.anoLancamento;
+        colunaAnoLancamento_filme.innerText = item_lambida.anoÇancamento;
 
         colunaAcao_filme = document.createElement("td");
 
@@ -77,6 +82,55 @@ let link_api_filmes= 'https://5f8c9f01c7aadb001605e4d7.mockapi.io/api/filmes';
     });//fim da lambida
 
     }//fim da const
-    
+
 //fim do listar filme dois
 
+//remover
+const remover_filme2 = (id) => {
+            
+    fetch(link_api_filmes + '/' + id,{
+        method : 'DELETE'
+    })
+    .then(response => response.json())
+    .then(dados => {
+        alert('Filme removido');
+
+        listar_filmes2();
+    })
+
+}
+//remover
+//editar
+const editar = (id) => {
+    fetch(link_api_filmes+ '/' + id, {
+        method : 'GET'
+    })
+    .then(response => response.json())
+    .then(dado => {
+        document.querySelector('#filmeId').value = dado.id;
+        document.querySelector('#nome_filme2').value = dado.nome;
+        document.querySelector('#categoria_filme2').value = dado.categoria;
+        document.querySelector('#ano_filme2').value = dado.anoLancamento;
+    })
+}
+//fim editar
+
+//novo filme
+const novoFilme = () => {
+    document.querySelector('#formFilme').reset();
+    document.querySelector('#filmeId').value = "";
+    document.querySelector('#nome_filme2').focus();
+}
+
+//salvr
+const salvar = () => {
+    event.preventDefault();
+
+    const filme = {
+        nome : document.querySelector('#nome_filme2').value,
+        categoria : document.querySelector('#categoria_filme2').value,
+        anoLancamento : document.querySelector('#ano_filme2').value,
+    }
+}
+
+ 
